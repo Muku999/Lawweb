@@ -1,13 +1,16 @@
 
-
+.body{
+  background-size: 
+}
 .mak{
 background-color: ;
 width: 750px;
 height: 200px;
 padding: 50px;
 border: 10px solid black;
-color: white;
+color: black;
 font-size: 75px;
+text-shadow: 2px 2px white;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 
 }
@@ -57,10 +60,10 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
         display: block;
         margin: 12px -12px;
         padding: 0;
-        background: #FFA91B;
-        border: 2px solid #F7C833;
-        border-right: 2px solid #F89329;
-        border-bottom: 2px solid #F89329;
+        background: #1bbeff;
+        border: 2px solid white;
+        border-right: 2px solid steelblue;
+        border-bottom: 2px solid steelblue;
         border-radius: 5px;
         transition: opacity 0.2s, visibility 0.2s;
         li {
@@ -73,17 +76,17 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
         }
       }
       &:hover {
-        background: #EC4138;
-        border: 2px solid #F05749;
-        border-right: 2px solid #E02A21;
-        border-bottom: 2px solid #E02A21;
+        background: blue;
+        border: 2px solid white ;
+        border-right: 2px solid white ;
+        border-bottom: 2px solid white;
         a {
           color: #F9F8FD;
         }
         ul {
           visibility: visible;
           opacity: 1;
-          box-shadow: 0px 3px 5px 2px #EBECF1;
+          box-shadow: 0px 3px 5px 2px whitesmoke;
           li {
             a {
               color: #F9F8FD;
@@ -108,3 +111,62 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
       top: 15px;
     }
   }
+  .flip_box {
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    perspective: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+h2 {
+    text-align: center;
+}
+ 
+/* For holding the front-side and back-side elements */
+.inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+ 
+/* For adding the Horizontal Flip Effect */
+.flip_box:hover .inner {
+    transform: rotateY(180deg);
+}
+ 
+/* For positioning the front-side and back-side elements */
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+ 
+/* For styling the front-side element  */
+.front {
+    background-color: whitesmoke;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+/* For styling the back-side element  */
+.back {
+    background-color: blue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+  
